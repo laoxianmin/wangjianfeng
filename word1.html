@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<div id="div"></div>
+
+
+<script>
+    //做此题的思路，首先，建立一个类，创建对象。
+
+
+    function creatLi(code, team, country, score, count) {
+        this.code = code;
+        this.team = team;
+        this.country = country;
+        this.score=score;
+        this.count=count;
+        this.change=function(i){
+            this.score=i;
+        }
+    }
+    //创造对象
+//    function creatObj(){
+        var obj4=new creatLi(10001,"中国队","中国",9,2);
+        var obj2=new creatLi(10002,"美国队","美国",7,-9);
+        var obj3=new creatLi(10003,"日本队","日本",-9,9);
+        var obj1=new creatLi(10004,"韩国队","韩国",-5,-2);
+        var arr=[obj1,obj2,obj3,obj4];
+        //寻找中国队,美国队，日本队，韩国队 arr[i].team  写一个寻找他们的函数
+
+        function findTeam(a,b){
+            for (var i=0;i<a.length;i++){
+                if(arr[i].team==b){
+                    document.write(arr[i].team+"积分："+arr[i].score+","+"净胜球："+arr[i].count+"<br/>")
+                }else if(arr[i].country==b){
+                    document.write("美国队积分为："+(arr[i].score));
+                }
+            }
+        }
+    var i=findTeam(arr,"中国队");
+    var j=findTeam(arr,"美国");
+
+
+
+
+
+//    }
+
+
+</script>
+</body>
+
+</html>
